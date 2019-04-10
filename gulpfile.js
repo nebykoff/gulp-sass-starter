@@ -2,10 +2,10 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
-var gcmq = require('gulp-group-css-media-queries');
-var smartgrid = require('smart-grid');
+const gcmq = require('gulp-group-css-media-queries');
+const smartgrid = require('smart-grid');
 
-var stylesPath = './scss';
+const stylesPath = './scss';
 
 var autoprefixerList = [
     'Chrome >= 45',
