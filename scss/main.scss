@@ -1,6 +1,43 @@
-a{
-    color: green;
-    &:hover{
-        background: #FF00FF;
+@import "smart-grid";
+
+@include reset();
+
+.wrapper {
+    @include wrapper();
+    border: 1px solid black;
+}
+
+.test-row {
+    @include row-flex();
+
+    border: 1px solid black;
+
+    .block1 {
+        background-color: chartreuse;
+        height: 200px;
+        @include col();
+        @include size(3);        
+    }
+
+    .block2 {
+        background-color: gold;
+        height: 200px;
+        @include col();
+        @include size(3);        
+    }
+
+    .block3 {
+        background-color: aqua;
+        height: 200px;
+        @include col();
+        @include size(3);
+        
+    }
+
+    .block4 {
+        background-color: violet;
+        height: 200px;
+        @include col();
+        @include size(3);
     }
 }

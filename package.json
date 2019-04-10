@@ -8,9 +8,11 @@
   },
   "devDependencies": {
     "gulp-autoprefixer": "^6.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "smart-grid": "^2.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
