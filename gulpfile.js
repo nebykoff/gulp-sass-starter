@@ -1,8 +1,9 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
-const autoprefixer = require('gulp-autoprefixer');
 const gcmq = require('gulp-group-css-media-queries');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
 const smartgrid = require('smart-grid');
 
 const stylesPath = './scss';
@@ -18,14 +19,16 @@ var autoprefixerList = [
     'Opera >= 30'
 ];
 
+var plugins = [
+    autoprefixer({browsers: autoprefixerList})    
+];
+
 gulp.task('build:css', function () {
     return gulp.src(stylesPath+'/**/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'expanded'}).on('error', sass.logError))
-        .pipe(autoprefixer({
-            browsers: autoprefixerList            
-        }))
-        .pipe(gcmq()) //Группировка медиа запросов
+        .pipe(postcss(plugins)) 
+        // .pipe(gcmq()) //Группировка медиа запросов
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./css/'))
 })
