@@ -8,19 +8,8 @@ const smartgrid = require('smart-grid');
 
 const stylesPath = './scss';
 
-var autoprefixerList = [
-    'Chrome >= 45',
-    'Firefox ESR',
-    'Edge >= 12',
-    'Explorer >= 10',
-    'iOS >= 9',
-    'Safari >= 9',
-    'Android >= 4.4',
-    'Opera >= 30'
-];
-
 var plugins = [
-    autoprefixer({browsers: autoprefixerList})    
+    autoprefixer({ grid: true, browsers: ['last 2 versions', 'ie 10-11', 'Firefox > 20']})    
 ];
 
 gulp.task('build:css', function () {
